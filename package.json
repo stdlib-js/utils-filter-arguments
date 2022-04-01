@@ -1,0 +1,43 @@
+{
+  "name": "@stdlib/utils-filter-arguments",
+  "version": "0.0.0",
+  "description": "Create a function that invokes a provided function according to a predicate function.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/utils-filter-arguments.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "predicate",
+    "reject",
+    "filter",
+    "mask",
+    "masked",
+    "msk",
+    "arguments",
+    "args",
+    "invoke",
+    "call",
+    "apply",
+    "function",
+    "fun",
+    "func",
+    "fcn"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
