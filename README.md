@@ -34,32 +34,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-filter-arguments
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-filterArguments = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@umd/bundle.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@umd/bundle.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.filterArguments;
-})();
-</script>
+var filterArguments = require( '@stdlib/utils-filter-arguments' );
 ```
 
 #### filterArguments( fcn, predicate\[, thisArg] )
@@ -141,15 +139,10 @@ var out = bar( 1, 2, 3 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@umd/bundle.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@umd/bundle.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var add = require( '@stdlib/math-base-ops-add' );
+var filterArguments = require( '@stdlib/utils-filter-arguments' );
 
 function fill( i ) {
     return i;
@@ -173,11 +166,6 @@ for ( i = 0; i < x.length-1; i++ ) {
     f = filterArguments( add, factory( i, i+2 ) );
     console.log( 'sum(x_%d, x_%d) = %d', i, i+1, f.apply( null, x ) );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -265,6 +253,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/utils-filter-arguments/tree/deno
 [umd-url]: https://github.com/stdlib-js/utils-filter-arguments/tree/umd
 [esm-url]: https://github.com/stdlib-js/utils-filter-arguments/tree/esm
+[branches-url]: https://github.com/stdlib-js/utils-filter-arguments/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-filter-arguments/main/LICENSE
 
