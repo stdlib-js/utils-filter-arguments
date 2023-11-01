@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2021 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,197 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var filterArguments = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof filterArguments, 'function', 'main export is a function' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
-});
-
-tape( 'the function throws an error if not provided a function', function test( t ) {
-	var values;
-	var i;
-
-	values = [
-		'5',
-		5,
-		NaN,
-		true,
-		false,
-		null,
-		void 0,
-		{},
-		[]
-	];
-
-	for ( i = 0; i < values.length; i++ ) {
-		t.throws( badValue( values[i] ), TypeError, 'throws an error when provided '+values[i] );
-	}
-	t.end();
-
-	function badValue( value ) {
-		return function badValue() {
-			filterArguments( value, predicate );
-		};
-	}
-
-	function predicate( v ) {
-		return ( v !== 2 );
-	}
-});
-
-tape( 'the function throws an error if provided a second argument which is not a function', function test( t ) {
-	var values;
-	var i;
-
-	values = [
-		'5',
-		5,
-		NaN,
-		true,
-		false,
-		null,
-		void 0,
-		{},
-		[]
-	];
-
-	for ( i = 0; i < values.length; i++ ) {
-		t.throws( badValue( values[i] ), TypeError, 'throws an error when provided '+values[i] );
-	}
-	t.end();
-
-	function foo( a, b, c ) {
-		return [ a, b, c ];
-	}
-
-	function badValue( value ) {
-		return function badValue() {
-			filterArguments( foo, value );
-		};
-	}
-});
-
-tape( 'the function returns a function', function test( t ) {
-	var bar = filterArguments( foo, predicate );
-
-	t.strictEqual( typeof bar, 'function', 'returns a function' );
-	t.end();
-
-	function foo( a, b ) {
-		return [ a, b ];
-	}
-
-	function predicate( v ) {
-		return ( v !== 2 );
-	}
-});
-
-tape( 'the returned function invokes a function according to a predicate function', function test( t ) {
-	var bar = filterArguments( foo, predicate );
-
-	t.deepEqual( foo( 1, 2, 3 ), [ 1, 2 ], 'returns arguments in order' );
-	t.deepEqual( bar( 1, 2, 3 ), [ 1, 3 ], 'applies predicate function' );
-	t.end();
-
-	function foo( a, b ) {
-		return [ a, b ];
-	}
-
-	function predicate( v ) {
-		return ( v !== 2 );
-	}
-});
-
-tape( 'the returned function invokes a predicate function with the argument value and the argument index', function test( t ) {
-	var indices;
-	var values;
-	var bar;
-
-	bar = filterArguments( foo, predicate );
-
-	values = [];
-	indices = [];
-
-	t.deepEqual( bar( 1, 2, 3 ), [ 1, 3 ], 'applies predicate function' );
-	t.deepEqual( values, [ 1, 2, 3 ], 'returns expected value' );
-	t.deepEqual( indices, [ 0, 1, 2 ], 'returns expected value' );
-
-	t.end();
-
-	function foo( a, b ) {
-		return [ a, b ];
-	}
-
-	function predicate( v, i ) {
-		values.push( v );
-		indices.push( i );
-		return ( i !== 1 );
-	}
-});
-
-tape( 'the function supports providing a `this` context', function test( t ) {
-	var ctx;
-	var bar;
-	var i;
-
-	ctx = [
-		null,
-		void 0,
-		[],
-		{},
-		'beep',
-		3.14,
-		function noop() {}
-	];
-
-	bar = filterArguments( foo, predicate, ctx );
-
-	for ( i = 0; i < ctx.length; i++ ) {
-		t.deepEqual( bar( 1, 2, 3 ), [ 1, 3 ], 'returns expected value' );
-	}
-	t.end();
-
-	function foo( a, b ) {
-		return [ a, b ];
-	}
-
-	function predicate( v ) {
-		return ( v !== 2 );
-	}
-});
-
-tape( 'the function supports providing a `this` context', function test( t ) {
-	var ctx;
-	var bar;
-	var foo;
-
-	function Foo() {
-		this.a = 1;
-		this.b = 2;
-		return this;
-	}
-
-	Foo.prototype.scale = function scale( a, b ) {
-		return [ this.a*a, this.b*b ];
-	};
-
-	ctx = {
-		'a': 10,
-		'b': 20
-	};
-
-	foo = new Foo();
-	bar = filterArguments( foo.scale, predicate, ctx );
-
-	t.deepEqual( bar( 1, 2, 3 ), [ 10, 60 ], 'returns expected value' );
-	t.end();
-
-	function predicate( v ) {
-		return ( v !== 2 );
-	}
 });
