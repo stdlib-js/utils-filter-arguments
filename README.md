@@ -45,14 +45,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-filter-arguments
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@esm/index.mjs';
+var filterArguments = require( '@stdlib/utils-filter-arguments' );
 ```
 
 #### filterArguments( fcn, predicate\[, thisArg] )
@@ -134,15 +150,10 @@ var out = bar( 1, 2, 3 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
-import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
-import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@esm/index.mjs';
+```javascript
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var add = require( '@stdlib/math-base-ops-add' );
+var filterArguments = require( '@stdlib/utils-filter-arguments' );
 
 function fill( i ) {
     return i;
@@ -166,10 +177,6 @@ for ( i = 0; i < x.length-1; i++ ) {
     f = filterArguments( add, factory( i, i+2 ) );
     console.log( 'sum(x_%d, x_%d) = %d', i, i+1, f.apply( null, x ) );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -188,6 +195,15 @@ for ( i = 0; i < x.length-1; i++ ) {
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/utils-mask-arguments`][@stdlib/utils/mask-arguments]</span><span class="delimiter">: </span><span class="description">create a function that invokes a provided function according to an argument mask.</span>
+-   <span class="package-name">[`@stdlib/utils-reject-arguments`][@stdlib/utils/reject-arguments]</span><span class="delimiter">: </span><span class="description">create a function that invokes a provided function according to a predicate function.</span>
+-   <span class="package-name">[`@stdlib/utils-reorder-arguments`][@stdlib/utils/reorder-arguments]</span><span class="delimiter">: </span><span class="description">create a function that invokes a provided function with reordered arguments.</span>
+-   <span class="package-name">[`@stdlib/utils-reverse-arguments`][@stdlib/utils/reverse-arguments]</span><span class="delimiter">: </span><span class="description">create a function that invokes a provided function with arguments in reverse order.</span>
+
 </section>
 
 <!-- /.related -->
@@ -201,7 +217,7 @@ for ( i = 0; i < x.length-1; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -260,6 +276,18 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [branches-url]: https://github.com/stdlib-js/utils-filter-arguments/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-filter-arguments/main/LICENSE
+
+<!-- <related-links> -->
+
+[@stdlib/utils/mask-arguments]: https://github.com/stdlib-js/utils-mask-arguments
+
+[@stdlib/utils/reject-arguments]: https://github.com/stdlib-js/utils-reject-arguments
+
+[@stdlib/utils/reorder-arguments]: https://github.com/stdlib-js/utils-reorder-arguments
+
+[@stdlib/utils/reverse-arguments]: https://github.com/stdlib-js/utils-reverse-arguments
+
+<!-- </related-links> -->
 
 </section>
 
