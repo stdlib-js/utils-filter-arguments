@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/utils-filter-arguments",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Create a function that invokes a provided function according to a predicate function.",
   "license": "Apache-2.0",
   "author": {
@@ -37,8 +37,8 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-is-function": "^0.1.1",
-    "@stdlib/string-format": "^0.1.1"
+    "@stdlib/assert-is-function": "^0.2.0",
+    "@stdlib/string-format": "^0.2.0"
   },
   "devDependencies": {
     "@stdlib/array-filled-by": "^0.1.0",
