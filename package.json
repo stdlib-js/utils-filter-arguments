@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/utils-filter-arguments",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Create a function that invokes a provided function according to a predicate function.",
   "license": "Apache-2.0",
   "author": {
@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@stdlib/assert-is-function": "^0.2.1",
-    "@stdlib/string-format": "^0.2.1",
-    "@stdlib/error-tools-fmtprodmsg": "^0.2.1"
+    "@stdlib/string-format": "^0.2.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
   },
   "devDependencies": {
     "@stdlib/array-filled-by": "^0.2.1",
