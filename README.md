@@ -154,7 +154,7 @@ var out = bar( 1, 2, 3 );
 
 ```javascript
 var filledarrayBy = require( '@stdlib/array-filled-by' );
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 var filterArguments = require( '@stdlib/utils-filter-arguments' );
 
 function fill( i ) {
@@ -236,7 +236,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
