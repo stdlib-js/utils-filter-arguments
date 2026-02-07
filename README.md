@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@esm/index.mjs';
+import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@v0.2.3-esm/index.mjs';
 ```
 
 #### filterArguments( fcn, predicate\[, thisArg] )
@@ -142,7 +142,7 @@ var out = bar( 1, 2, 3 );
 
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
 import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-add@esm/index.mjs';
-import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@esm/index.mjs';
+import filterArguments from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-filter-arguments@v0.2.3-esm/index.mjs';
 
 function fill( i ) {
     return i;
